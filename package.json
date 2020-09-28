@@ -1,0 +1,17 @@
+{
+  "name": "test-automation-example-with-cypress",
+  "version": "1.0.0",
+  "description": "Test automation example with Cypress based on TAU course 'introduction to cypress'",
+  "scripts": {
+    "cypress": "cypress open",
+    "test": "cypress run"
+  },
+  "author": "Lucie Mars",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^3.8.3"
+  },
+  "devDependencies": {
+    "prettier": "2.1.2"
+  }
+}
