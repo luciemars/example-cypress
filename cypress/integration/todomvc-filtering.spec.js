@@ -1,9 +1,10 @@
 /// <reference types="cypress" />
 
 import * as todoPage from "../page-objects/todo-page";
+import testData from "../fixtures/test-data";
 
 describe("filtering", () => {
-  const todoList = ["clean room", "learn javascript", "use cypress"];
+  const todoList = testData.todoList;
 
   beforeEach(() => {
     todoPage.navigate();
