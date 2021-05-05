@@ -8,7 +8,7 @@ const locators = {
 };
 
 export function navigate() {
-  cy.visit("http://todomvc-app-for-testing.surge.sh");
+  cy.visit("/");
 }
 
 export function addTodo(todoText) {
@@ -35,13 +35,11 @@ export function getItemToggle(item) {
 }
 
 export function getTodoItemWithText(todoText) {
-  return getTodoItems().within(() => {
-    cy.contains(todoText).parent();
-  });
+  return getTodoItems().contains(todoText).parent();
 }
 
 export function markTodoAsDone(todoText) {
-  getTodoItemWithText(todoText).children(locators.toggle).click();
+  getTodoItemWithText(todoText).find(locators.toggle).click();
 }
 
 export function clearCompleted() {
