@@ -39,15 +39,14 @@ describe("filtering", () => {
     // Validate completed element is displayed with the proper style
     validateItemActive(todoList[1], false);
   });
-
+  
   it('should filter "all" todos', () => {
     todoPage.applyFilter("All");
     todoPage.getTodoItems().should("have.length", 3);
 
-    // Validate active and completed elements are displayed with the proper style
-    validateItemActive(todoList[0], true);
-    validateItemActive(todoList[1], false);
-    validateItemActive(todoList[2], true);
+    todoList.forEach((item, index) => {
+      validateItemActive(item, index === 0 || index === 2);
+    });
   });
 });
 
